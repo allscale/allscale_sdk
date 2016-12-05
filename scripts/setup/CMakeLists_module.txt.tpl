@@ -1,10 +1,12 @@
-find_package(Boost ${Boost_VERSION} EXACT REQUIRED COMPONENTS filesystem system)
+set(CMAKE_C_COMPILER ${ALLSCALECC})
+set(CMAKE_CXX_COMPILER ${ALLSCALECC})
 
 glob_sources(%MODULE%_srcs src)
 add_library(%MODULE% ${%MODULE%_srcs})
 target_include_directories(%MODULE% PUBLIC include)
-target_include_directories(%MODULE% SYSTEM PUBLIC ${Boost_INCLUDE_DIR})
-target_link_libraries(%MODULE% ${Boost_LIBRARIES})
+
+add_dependencies(%MODULE% allscale_compiler)
+target_include_directories(%MODULE% PUBLIC ${ALLSCALE_API_INCLUDE_PATH})
 
 msvc_header_completion(%MODULE%_headers include)
 

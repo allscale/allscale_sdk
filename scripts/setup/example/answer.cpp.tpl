@@ -1,13 +1,15 @@
 #include "%PROJECT%/%MODULE%/answer.h"
 
-#include <boost/optional.hpp>
+#include "allscale/api/user/data/vector.h"
+
+using namespace allscale::api::user::data;
 
 namespace %PROJECT% {
 namespace %MODULE% {
 
 	int answer() {
-		boost::optional<int> oi(42);
-		return *oi;
+		Vector<int, 10> v;
+		return 42;
 	}
 
 } // end namespace %MODULE%
