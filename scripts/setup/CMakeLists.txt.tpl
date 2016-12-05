@@ -8,9 +8,6 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 file(GLOB prefix_paths ${PROJECT_SOURCE_DIR}/third_party/*)
 list(APPEND CMAKE_PREFIX_PATH ${prefix_paths})
 
-# -- Extends
-#add_subdirectory(insieme)
-
 # -- Project Settings
 include(build_settings)
 include(boost_settings)
@@ -23,5 +20,6 @@ include(doxygen)
 include(file_globs)
 include(add_unittest)
 include(msvc_file_completion)
+include(allscale_api)
 
 # -- Project Modules
