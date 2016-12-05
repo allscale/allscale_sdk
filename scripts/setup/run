@@ -29,7 +29,7 @@ fi
 project="$1"
 shift
 
-if [[ $(head -n1 "$TGT/README.md") == "# CXX Template" ]]; then
+if [[ $(head -n1 "$TGT/README.md") == "# Allscale SDK Template" ]]; then
 	# setup README
 	render_template "$DIR/README.md.tpl" "$TGT/README.md"
 

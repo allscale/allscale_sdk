@@ -1,4 +1,4 @@
-# CXX Template
+# Allscale SDK Template
 
 Be aware, altering files from this repository may yield merge conflicts upon
 updating. The setup script will replace this README, you are free to change and
