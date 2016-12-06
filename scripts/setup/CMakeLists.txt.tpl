@@ -20,7 +20,6 @@ include(doxygen)
 include(file_globs)
 include(add_unittest)
 include(msvc_file_completion)
-include(allscale_api)
-include(allscale_compiler)
+include(allscale)
 
 # -- Project Modules
