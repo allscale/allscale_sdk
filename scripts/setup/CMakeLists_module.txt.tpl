@@ -1,5 +1,7 @@
-set(CMAKE_C_COMPILER ${ALLSCALECC})
-set(CMAKE_CXX_COMPILER ${ALLSCALECC})
+if(USE_ALLSCALECC)
+	set(CMAKE_C_COMPILER ${ALLSCALECC})
+	set(CMAKE_CXX_COMPILER ${ALLSCALECC})
+endif()
 
 glob_sources(%MODULE%_srcs src)
 add_library(%MODULE% ${%MODULE%_srcs})

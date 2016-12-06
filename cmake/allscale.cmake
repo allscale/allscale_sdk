@@ -1,6 +1,12 @@
 if(NOT TARGET allscale_compiler)
 	include(ExternalProject)
 
+	if(USE_ALLSCALECC)
+		set(_build_cmd $(MAKE) allscalecc)
+	else()
+		set(_build_cmd $(MAKE) allscale_runtime)
+	endif()
+
 	ExternalProject_Add(
 		allscale_compiler
 		GIT_REPOSITORY git@goedis:philipp.gschwandtner/allscale-compiler.git
@@ -8,6 +14,7 @@ if(NOT TARGET allscale_compiler)
 			${CMAKE_COMMAND} -E env
 			"INSIEME_LIBS_HOME=${PROJECT_SOURCE_DIR}/third_party"
 			${CMAKE_COMMAND}
+		BUILD_COMMAND ${_build_cmd}
 		INSTALL_COMMAND ""
 		TEST_COMMAND ""
 		DOWNLOAD_NO_PROGRESS 1

@@ -2,6 +2,7 @@ option(BUILD_SHARED_LIBS "Link libraries dynamically" ON)
 option(BUILD_TESTS "Enable testing" ON)
 option(BUILD_DOCS "Enable documentation" OFF)
 option(USE_ASSERT "Enable assertions" ON)
+option(USE_ALLSCALECC "Use allscalecc as compiler" OFF)
 
 if(NOT DEFINED CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release)
