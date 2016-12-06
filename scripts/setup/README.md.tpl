@@ -6,9 +6,11 @@ Description goes here...
 
 ### Dependencies
 
-See `scripts/dependencies/README.md` for more details. Otherwise do
+Ensure you have GCC 5 installed and set as your default C/C++ compiler. Next
+run the following commands. More details can be found in
+`scripts/dependencies`.
 
-    $ scripts/dependencies/installer boost
+    $ scripts/dependencies/installer
     $ scripts/dependencies/third_party_linker
 
 ### Configuration
@@ -27,7 +29,7 @@ Following options can be supplied to CMake
 
     $ mkdir build
     $ cd build
-    $ cmake ..
+    $ ../third_party/cmake-latest/bin/cmake ..
     $ make
     $ make test
 
