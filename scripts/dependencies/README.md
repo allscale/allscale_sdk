@@ -58,12 +58,12 @@ not contain different versions of the same package. Example:
     drwxr-xr-x.  5 alex   dps 4.0K Nov 18 15:14 cmake-3.6.1/
         ...
     $ ls -l MyAwesomeProject/third_party
-    lrwxrwxrwx. 1 alex dps   47 Nov 22 13:17 autoconf -> /home/alex/libs/autoconf-2.68/
-    lrwxrwxrwx. 1 alex dps   47 Nov 22 13:17 automake -> /home/alex/libs/automake-1.15/
-    lrwxrwxrwx. 1 alex dps   47 Nov 22 13:17 binutils -> /home/alex/libs/binutils-2.27/
-    lrwxrwxrwx. 1 alex dps   45 Nov 22 13:17 bison -> /home/alex/libs/bison-3.0.4/
-    lrwxrwxrwx. 1 alex dps   46 Nov 22 13:17 boost -> /home/alex/libs/boost-1.59.0/
-    lrwxrwxrwx. 1 alex dps   45 Nov 22 13:17 cmake -> /home/alex/libs/cmake-3.2.1/
+    lrwxrwxrwx. 1 alex dps   47 Nov 22 13:17 autoconf-latest -> /home/alex/libs/autoconf-2.68/
+    lrwxrwxrwx. 1 alex dps   47 Nov 22 13:17 automake-latest -> /home/alex/libs/automake-1.15/
+    lrwxrwxrwx. 1 alex dps   47 Nov 22 13:17 binutils-latest -> /home/alex/libs/binutils-2.27/
+    lrwxrwxrwx. 1 alex dps   45 Nov 22 13:17 bison-latest -> /home/alex/libs/bison-3.0.4/
+    lrwxrwxrwx. 1 alex dps   46 Nov 22 13:17 boost-latest -> /home/alex/libs/boost-1.59.0/
+    lrwxrwxrwx. 1 alex dps   45 Nov 22 13:17 cmake-latest -> /home/alex/libs/cmake-3.2.1/
         ...
 
 The `third_party_linker` can create these symlinks for you, it uses the same

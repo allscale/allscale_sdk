@@ -75,9 +75,11 @@ install_pkg() {
 	EOF
 }
 
-if [[ $# -eq 0 ]]; then
-	echo "Usage: $0 <package>..."
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+	echo "Usage: $0 [<package>]..."
 	exit 1
+elif [[ $# == 0 ]]; then
+	PACKAGES="bison boost cmake cudd flex hwloc llvm luajit papi"
 else
 	PACKAGES="$@"
 fi
