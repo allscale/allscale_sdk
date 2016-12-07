@@ -3,7 +3,7 @@ if(BUILD_TESTS)
 endif()
 
 macro(add_unittest module test)
-	if(BUILD_TESTS)
+	if(BUILD_TESTS AND NOT USE_ALLSCALECC)
 		# subdirectory list
 		get_filename_component(test_dir ${test} DIRECTORY)
 		string(CONCAT current_dir ${CMAKE_CURRENT_SOURCE_DIR} "/test")
