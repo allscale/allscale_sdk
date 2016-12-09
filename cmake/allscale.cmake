@@ -9,13 +9,13 @@ if(NOT TARGET allscale_compiler)
 
 	ExternalProject_Add(
 		allscale_compiler
-		GIT_REPOSITORY git@goedis:philipp.gschwandtner/allscale-compiler.git
+		GIT_REPOSITORY git@goedis.dps.uibk.ac.at:philipp.gschwandtner/allscale-compiler.git
 		CMAKE_COMMAND
 			${CMAKE_COMMAND} -E env
 			"INSIEME_LIBS_HOME=${PROJECT_SOURCE_DIR}/third_party"
 			${CMAKE_COMMAND}
-			-DINSIEME_C_BACKEND_COMPILER="${CMAKE_C_COMPILER}"
-			-DINSIEME_CXX_BACKEND_COMPILER="${CMAKE_CXX_COMPILER}"
+			-DINSIEME_C_BACKEND_COMPILER=${CMAKE_C_COMPILER}
+			-DINSIEME_CXX_BACKEND_COMPILER=${CMAKE_CXX_COMPILER}
 		BUILD_COMMAND ${_build_cmd}
 		INSTALL_COMMAND ""
 		TEST_COMMAND ""
