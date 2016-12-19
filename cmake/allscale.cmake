@@ -4,7 +4,7 @@ if(NOT TARGET allscale)
 	if(USE_ALLSCALECC)
 		ExternalProject_Add(
 			allscale
-			GIT_REPOSITORY git@goedis.dps.uibk.ac.at:philipp.gschwandtner/allscale-compiler.git
+			GIT_REPOSITORY https://github.com/allscale/allscale_compiler
 			CMAKE_COMMAND
 				${CMAKE_COMMAND} -E env
 				"INSIEME_LIBS_HOME=${PROJECT_SOURCE_DIR}/third_party"
@@ -24,7 +24,7 @@ if(NOT TARGET allscale)
 	else()
 		ExternalProject_Add(
 			allscale
-			GIT_REPOSITORY git@goedis.dps.uibk.ac.at:herbert.jordan/allscale_api.git
+			GIT_REPOSITORY https://github.com/allscale/allscale_api
 			BUILD_COMMAND ""
 			INSTALL_COMMAND ""
 			TEST_COMMAND ""
