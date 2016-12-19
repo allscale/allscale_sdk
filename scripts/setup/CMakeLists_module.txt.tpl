@@ -7,7 +7,7 @@ glob_sources(%MODULE%_srcs src)
 add_library(%MODULE% ${%MODULE%_srcs})
 target_include_directories(%MODULE% PUBLIC include)
 
-add_dependencies(%MODULE% allscale_compiler)
+add_dependencies(%MODULE% allscale)
 target_include_directories(%MODULE% PUBLIC ${ALLSCALE_API_INCLUDE_PATH})
 
 msvc_header_completion(%MODULE%_headers include)
