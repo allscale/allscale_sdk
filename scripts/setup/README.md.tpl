@@ -25,6 +25,7 @@ Following options can be supplied to CMake
 | -DBUILD_DOCS        | ON / OFF        |
 | -DUSE_ASSERT        | ON / OFF        |
 | -DUSE_ALLSCALECC    | ON / OFF        |
+| -DTHIRD_PARTY_DIR   | \<path\>        |
 
 ### Building / Testing
 
