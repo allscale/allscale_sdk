@@ -7,8 +7,8 @@ option(USE_ALLSCALECC "Use allscalecc as compiler" OFF)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-if(NOT DEFINED CMAKE_BUILD_TYPE)
-	set(CMAKE_BUILD_TYPE Release)
+if(NOT CMAKE_BUILD_TYPE)
+	set(CMAKE_BUILD_TYPE "Release" CACHE STRING "CMake Build Type" FORCE)
 endif()
 
 if(BUILD_TESTS)
