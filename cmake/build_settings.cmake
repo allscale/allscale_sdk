@@ -2,7 +2,10 @@ option(BUILD_SHARED_LIBS "Link libraries dynamically" ON)
 option(BUILD_TESTS "Enable testing" ON)
 option(BUILD_DOCS "Enable documentation" OFF)
 option(USE_ASSERT "Enable assertions" ON)
+option(USE_VALGRIND "Allow Valgrind for unit tests" ON)
 option(USE_ALLSCALECC "Use allscalecc as compiler" OFF)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 if(NOT DEFINED CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release)
@@ -12,7 +15,7 @@ if(BUILD_TESTS)
 	enable_testing()
 endif()
 
-if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang") OR ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU"))
+if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 	# base C flags
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -std=c99")
 	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0 -g3 -ggdb")
@@ -41,6 +44,7 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang") OR ("${CMAKE_CXX_COMPILER_ID}" 
 	endif()
 elseif(MSVC)
 	include(msvc_settings)
+	set(USE_VALGRIND OFF)
 else()
 	message(FATAL_ERROR "Unhandled Compiler: ${CMAKE_CXX_COMPILER_ID}")
 endif()
