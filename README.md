@@ -12,18 +12,18 @@ letters, digits and underscores only. An example module will be added:
 You can use the script to add new, empty modules, just use the same project
 name. Example:
 
-    $ scripts/setup/run insieme frontend core backend
+    $ scripts/setup/run demo app utils
 
 Additionally a script is provided to add new *parts* to a module. The target
 module must already exist and you have to provide the same project-name.
 
-    $ scripts/setup/add_part insieme frontend sema
+    $ scripts/setup/add_part demo utils sema
 
 Previous command adds a `sema.h`, `sema.cpp` and `sema_test.cc` to the
-corresponding directories of the *frontend* module. You can also supply
-multiple *parts*.
+corresponding directories of the *utils* module. You can also supply multiple
+*parts*.
 
-    $ scripts/setup/add_part insieme frontend sema extensions/malloc_extension
+    $ scripts/setup/add_part demo utils sema extensions/malloc_extension
 
 Subdirectories inside a module are created along the way as needed.
 
