@@ -4,14 +4,10 @@ Description goes here...
 
 ## Installation
 
-### Dependencies
+### Prerequisites
 
-Ensure you have GCC 5 installed and set as your default C/C++ compiler. Next
-run the following commands. More details can be found in
-`scripts/dependencies`.
-
-    $ scripts/dependencies/installer
-    $ scripts/dependencies/third_party_linker
+Ensure you have GCC 5 installed and set as your default C/C++ compiler.
+Furthermore CMake 3.5 (or later) is required for the build and testing process.
 
 ### Configuration
 
@@ -34,9 +30,29 @@ The file `cmake/build_settings.cmake` states their default value.
 
     $ mkdir build
     $ cd build
-    $ ../third_party/cmake-latest/bin/cmake ..
+    $ cmake ..
     $ make -j8
-    $ ../third_party/cmake-latest/bin/ctest -j8
+    $ ctest -j8
+
+## Using the AllScale Compiler
+
+To use the AllScale compiler, you first have to setup the required dependencies
+in order to build it. A dependency installer is provided, running the following
+commands should be sufficient on most systems. See
+`scripts/dependencies/README.md` for more details.
+
+    $ scripts/dependencies/installer
+    $ scripts/dependencies/third_party_linker
+
+To build this project using the AllScale compiler, simply set the corresponding
+CMake option. You may want to use a separate build directory to easily switch
+between GCC and AllScaleCC.
+
+    $ mkdir build_with_allscalecc
+    $ cd build_with_allscalecc
+    $ cmake -DUSE_ALLSCALECC=ON ..
+    $ make -j8
+    $ ctest -j8
 
 ## Development
 
@@ -56,3 +72,5 @@ header to each source file upon commit. See `scripts/license`.
     $ cmake -G "Visual Studio 14 Win64" -DBUILD_SHARED_LIBS=OFF Z:\path\to\project
 
 Add path for third-party libraries when needed.
+
+## Troubleshooting
