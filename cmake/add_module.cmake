@@ -19,6 +19,12 @@ macro(add_module_library module)
 		add_library(${module} ${${module}_srcs})
 		target_include_directories(${module} PUBLIC include)
 
+		if(NOT USE_ALLSCALECC)
+			# pthread
+			find_package(Threads)
+			target_link_libraries(${module} ${CMAKE_THREAD_LIBS_INIT})
+		endif()
+
 		# The project name will be prefixed to the output file since your
 		# library should be named libinsieme_frontend.so rather than
 		# libfrontend.so. This is especially helpful for installing this
