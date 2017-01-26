@@ -43,6 +43,7 @@ if [[ $(head -n1 "$TGT/README.md") == "# Allscale SDK Template" ]]; then
 	render_template "$DIR/example/answer.h.tpl" "$TGT/code/example/include/$project/example/answer.h"
 	render_template "$DIR/example/answer.cpp.tpl" "$TGT/code/example/src/answer.cpp"
 	render_template "$DIR/example/answer_test.cc.tpl" "$TGT/code/example/test/answer_test.cc"
+	render_template "$DIR/example/main.cxx.tpl" "$TGT/code/example/src/main.cxx"
 fi
 
 for module in "$@"; do

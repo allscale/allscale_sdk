@@ -28,13 +28,15 @@ Following options can be supplied to CMake
 | -DUSE_ALLSCALECC    | ON / OFF        |
 | -DTHIRD_PARTY_DIR   | \<path\>        |
 
+The file `cmake/build_settings.cmake` states their default value.
+
 ### Building / Testing
 
     $ mkdir build
     $ cd build
     $ ../third_party/cmake-latest/bin/cmake ..
-    $ make
-    $ make test
+    $ make -j8
+    $ ../third_party/cmake-latest/bin/ctest -j8
 
 ## Development
 
