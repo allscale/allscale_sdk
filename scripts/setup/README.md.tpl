@@ -67,6 +67,10 @@ When working on Windows via SMB share, consider setting following Git setting.
 A script, together with a Git hook, is provided to automatically add a license
 header to each source file upon commit. See `scripts/license`.
 
+### Eclipse Project
+
+    $ cmake -G "Eclipse CDT4 - Unix Makefiles" /path/to/project
+
 ### Visual Studio Solution
 
     $ cmake -G "Visual Studio 14 Win64" -DBUILD_SHARED_LIBS=OFF Z:\path\to\project
@@ -74,3 +78,15 @@ header to each source file upon commit. See `scripts/license`.
 Add path for third-party libraries when needed.
 
 ## Troubleshooting
+
+### Getting GCC 5 / CMake 3.5 / Valgrind (for Testing)
+
+The dependency installer can setup these required tools for you. Its README
+(`scripts/dependencies/README.md`) holds the details.
+
+It is preferred to use the operating system's package manager, if applicable.
+
+### No Source Folder in Eclipse Project
+
+Make sure your build folder is located outside the source folder. Eclipse is
+not capable of dealing with such a setup correctly.
