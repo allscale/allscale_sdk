@@ -26,9 +26,3 @@ corresponding directories of the *utils* module. You can also supply multiple
     $ scripts/setup/add_part demo utils sema extensions/malloc_extension
 
 Subdirectories inside a module are created along the way as needed.
-
-## Template Development
-
-The development of this template continues in its own branch `template` and
-will be merged to `master` from time to time. Each merge will mark a new
-version of the template.
