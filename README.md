@@ -14,6 +14,9 @@ name. Example:
 
     $ scripts/setup/run demo app utils
 
+If your project does not required multiple modules, keep all code inside a
+module named `app`.
+
 Additionally a script is provided to add new *parts* to a module. The target
 module must already exist and you have to provide the same project-name.
 
