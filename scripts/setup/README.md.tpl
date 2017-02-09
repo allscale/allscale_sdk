@@ -2,12 +2,19 @@
 
 Description goes here...
 
-## Installation
-
-### Prerequisites
+## Quickstart
 
 Ensure you have GCC 5 installed and set as your default C/C++ compiler.
 Furthermore CMake 3.5 (or later) is required for the build and testing process.
+Simply execute the following commands to build the project and run all tests.
+
+    $ mkdir build
+    $ cd build
+    $ cmake ../code
+    $ make -j8
+    $ ctest -j8
+
+## Advanced Options
 
 ### Configuration
 
@@ -26,14 +33,6 @@ Following options can be supplied to CMake
 | -DTHIRD_PARTY_DIR   | \<path\>        |
 
 The file `cmake/build_settings.cmake` states their default value.
-
-### Building / Testing
-
-    $ mkdir build
-    $ cd build
-    $ cmake ../code
-    $ make -j8
-    $ ctest -j8
 
 ## Using the AllScale Compiler
 
@@ -56,6 +55,26 @@ between GCC and AllScaleCC.
     $ ctest -j8
 
 ## Development
+
+### Adding new Modules
+
+The setup script can be run again to add new modules, just provide the same
+project name.
+
+    $ scripts/setup/run %PROJECT% frontend backend utils
+
+### Adding new Parts to Modules
+
+There is a utility script to add new *parts* to an existing module. The project
+name and module name must be provided followed by a list of *parts* to
+generate. Folders will be created along the way.
+
+    $ scripts/setup/add_part %PROJECT% frontend sema extensions/malloc_extension
+
+This will add the files `sema.h`, `sema.cpp` and `sema_test.cc` to the
+*frontend* module. Furthermore new subfolders `extensions` will be created
+containing `malloc_extension.h`, `malloc_extension.cpp` and
+`malloc_extension_test.cc` in their respective subdirectories.
 
 ### Executable Bit
 
