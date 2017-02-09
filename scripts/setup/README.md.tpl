@@ -22,6 +22,7 @@ Following options can be supplied to CMake
 | -DUSE_ASSERT        | ON / OFF        |
 | -DUSE_VALGRIND      | ON / OFF        |
 | -DUSE_ALLSCALECC    | ON / OFF        |
+| -DENABLE_PROFILING  | ON / OFF        |
 | -DTHIRD_PARTY_DIR   | \<path\>        |
 
 The file `cmake/build_settings.cmake` states their default value.
