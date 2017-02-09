@@ -38,12 +38,12 @@ if [[ ! -d "$TGT/code" ]]; then
 	# setup root CMakeLists
 	render_template "$DIR/CMakeLists.txt.tpl" "$TGT/code/CMakeLists.txt"
 
-	# setup example module
-	add_module example
-	render_template "$DIR/example/answer.h.tpl" "$TGT/code/example/include/$project/example/answer.h"
-	render_template "$DIR/example/answer.cpp.tpl" "$TGT/code/example/src/answer.cpp"
-	render_template "$DIR/example/answer_test.cc.tpl" "$TGT/code/example/test/answer_test.cc"
-	render_template "$DIR/example/main.cxx.tpl" "$TGT/code/example/src/main.cxx"
+	# setup app module
+	add_module app
+	render_template "$DIR/example/answer.h.tpl" "$TGT/code/app/include/$project/app/answer.h"
+	render_template "$DIR/example/answer.cpp.tpl" "$TGT/code/app/src/answer.cpp"
+	render_template "$DIR/example/answer_test.cc.tpl" "$TGT/code/app/test/answer_test.cc"
+	render_template "$DIR/example/main.cxx.tpl" "$TGT/code/app/src/$project.cxx"
 
 	if [[ -d "$TGT/.git" ]]; then
 		# no longer associate origin with SDK remote
