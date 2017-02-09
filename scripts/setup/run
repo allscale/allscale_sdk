@@ -45,10 +45,13 @@ if [[ ! -d "$TGT/code" ]]; then
 	render_template "$DIR/example/answer_test.cc.tpl" "$TGT/code/example/test/answer_test.cc"
 	render_template "$DIR/example/main.cxx.tpl" "$TGT/code/example/src/main.cxx"
 
-	# no longer associate origin with SDK remote
 	if [[ -d "$TGT/.git" ]]; then
+		# no longer associate origin with SDK remote
 		git remote rename origin sdk
 		git config --unset branch.master.remote
+
+		git add "$TGT/README.md"
+		git add "$TGT/code"
 	fi
 fi
 
