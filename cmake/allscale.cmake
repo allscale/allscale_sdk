@@ -2,6 +2,16 @@ if(NOT TARGET allscale)
 	include(ExternalProject)
 
 	if(USE_ALLSCALECC)
+		if(NOT EXISTS ${THIRD_PARTY_DIR})
+			message(FATAL_ERROR
+				"======================================================\n"
+				"No third_party directory found, did you forget to run:\n"
+				"   $ scripts/dependencies/installer\n"
+				"   $ scripts/dependencies/third_party_linker\n"
+				"======================================= (╯°□°）╯︵ ┻━┻\n"
+			)
+		endif()
+
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_compiler
