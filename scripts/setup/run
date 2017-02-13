@@ -45,13 +45,10 @@ if [[ ! -d "$TGT/code" ]]; then
 	render_template "$DIR/example/answer_test.cc.tpl" "$TGT/code/app/test/answer_test.cc"
 	render_template "$DIR/example/main.cxx.tpl" "$TGT/code/app/src/$project.cxx"
 
-	if [[ -d "$TGT/.git" ]]; then
-		# no longer associate origin with SDK remote
+	# reset origin if not forked properly
+	if [[ -d "$TGT/.git" && $(git config remote.origin.url) == "https://github.com/allscale/allscale_sdk" ]]; then
 		git remote rename origin sdk
 		git config --unset branch.master.remote
-
-		git add "$TGT/README.md"
-		git add "$TGT/code"
 	fi
 fi
 
