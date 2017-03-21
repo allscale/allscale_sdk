@@ -3,12 +3,19 @@ if(NOT TARGET allscale)
 
 	if(USE_ALLSCALECC)
 		if(NOT EXISTS ${THIRD_PARTY_DIR})
-			message(FATAL_ERROR
-				"======================================================\n"
-				"No third_party directory found, did you forget to run:\n"
-				"   $ scripts/dependencies/installer\n"
-				"   $ scripts/dependencies/third_party_linker\n"
-				"======================================= (╯°□°）╯︵ ┻━┻\n"
+			message(STATUS
+				"=================================================================\n"
+				"No third_party directory found, will set it up for you in 5 seconds:\n"
+				"====================================================================\n"
+			)
+			execute_process(COMMAND ${CMAKE_COMMAND} -E sleep 5)
+			execute_process(
+				COMMAND bash ${PROJECT_SOURCE_DIR}/../scripts/dependencies/installer
+				WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+			)
+			execute_process(
+				COMMAND bash ${PROJECT_SOURCE_DIR}/../scripts/dependencies/third_party_linker
+				WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 			)
 		endif()
 
