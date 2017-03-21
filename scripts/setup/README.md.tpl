@@ -32,7 +32,8 @@ Following options can be supplied to CMake
 | -DENABLE_PROFILING  | ON / OFF        |
 | -DTHIRD_PARTY_DIR   | \<path\>        |
 
-The file `cmake/build_settings.cmake` states their default value.
+The files `cmake/build_settings.cmake` and `code/CMakeLists.txt` state their
+default value.
 
 ## Using the AllScale Compiler
 
