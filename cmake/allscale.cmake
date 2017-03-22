@@ -43,7 +43,7 @@ if(NOT TARGET allscale)
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_api
-			GIT_TAG fe90452a8d4c65dd14e876a9b647af42499fe016
+			GIT_TAG fd467518b1f62e47c2ba227fb690080bd593aa48
 			BUILD_COMMAND ""
 			INSTALL_COMMAND ""
 			TEST_COMMAND ""
@@ -52,6 +52,6 @@ if(NOT TARGET allscale)
 		)
 		ExternalProject_Get_Property(allscale source_dir binary_dir)
 
-		set(ALLSCALE_API_INCLUDE_PATH ${source_dir}/code/include)
+		set(ALLSCALE_API_INCLUDE_PATH ${source_dir}/code/api/include ${source_dir}/code/utils/include)
 	endif()
 endif()
