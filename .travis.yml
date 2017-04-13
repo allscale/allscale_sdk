@@ -1,0 +1,53 @@
+# No Linux builds since CMake version is too old (2017-04-13)
+
+language: c++
+matrix:
+  include:
+    ####################################
+    #           Debug builds           #
+    ####################################
+    - os: osx
+      osx_image: xcode8
+      compiler: clang
+      env: BUILD_TYPE=Debug
+    - os: osx
+      osx_image: xcode8.1
+      compiler: clang
+      # bug, xcode8.1 is missing cmake, https://github.com/travis-ci/travis-ci/issues/6258
+      before_install:
+        - brew update
+        - brew install cmake
+      env: BUILD_TYPE=Debug
+    - os: osx
+      osx_image: xcode8.2
+      compiler: clang
+      env: BUILD_TYPE=Debug
+    ####################################
+    #          Release builds          #
+    ####################################
+    # ------------- OS X ------------- #
+    - os: osx
+      osx_image: xcode8
+      compiler: clang
+      env: BUILD_TYPE=Release
+    - os: osx
+      osx_image: xcode8.1
+      compiler: clang
+      # bug, xcode8.1 is missing cmake, https://github.com/travis-ci/travis-ci/issues/6258
+      before_install:
+        - brew update
+        - brew install cmake
+      env: BUILD_TYPE=Release
+    - os: osx
+      osx_image: xcode8.2
+      compiler: clang
+      env: BUILD_TYPE=Release
+
+script:
+  - scripts/setup/run demo_app
+  - mkdir build
+  - cd build
+  - cmake ../code -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+  - make -j2
+  # limiting number of workers as suggested in https://docs.travis-ci.com/user/languages/cpp/#OpenMP-projects
+  - NUM_WORKERS=3 make test ARGS="-j12 --output-on-failure"
