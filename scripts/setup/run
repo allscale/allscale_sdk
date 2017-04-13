@@ -51,7 +51,7 @@ if [[ ! -d "$TGT/code" ]]; then
 	# reset origin if not forked properly
 	if [[ -d "$TGT/.git" && $(git config remote.origin.url) == "https://github.com/allscale/allscale_sdk" ]]; then
 		git remote rename origin sdk
-		git config --unset branch.master.remote
+		git config --unset branch.master.remote || true
 	fi
 fi
 
