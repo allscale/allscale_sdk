@@ -22,7 +22,7 @@ if(NOT TARGET allscale)
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_compiler
-			GIT_TAG deb26db92320539919a984bde75a548e2b257313
+			GIT_TAG a48dc1ff7ee08d92f059c8352c05c1b3b94eb67f
 			CMAKE_COMMAND
 				${CMAKE_COMMAND} -E env
 				"INSIEME_LIBS_HOME=${THIRD_PARTY_DIR}"
@@ -31,6 +31,7 @@ if(NOT TARGET allscale)
 				${CMAKE_EXTERNALPROJECT_FORWARDS}
 				-DINSIEME_C_BACKEND_COMPILER=${CMAKE_C_COMPILER}
 				-DINSIEME_CXX_BACKEND_COMPILER=${CMAKE_CXX_COMPILER}
+				-DINVOKED_AS_EXTERNAL_PROJECT=ON
 			BUILD_COMMAND $(MAKE) allscalecc
 			INSTALL_COMMAND ""
 			EXCLUDE_FROM_ALL 1
@@ -44,7 +45,7 @@ if(NOT TARGET allscale)
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_api
-			GIT_TAG b2b79575c34f94b065fb456df600e88589ab24bd
+			GIT_TAG 9c621571058c5432fac9a81e3f6af95bf8928038
 			CONFIGURE_COMMAND ""
 			BUILD_COMMAND ""
 			INSTALL_COMMAND ""
