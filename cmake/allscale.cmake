@@ -32,15 +32,16 @@ if(NOT TARGET allscale)
 				-DINSIEME_C_BACKEND_COMPILER=${CMAKE_C_COMPILER}
 				-DINSIEME_CXX_BACKEND_COMPILER=${CMAKE_CXX_COMPILER}
 				-DINVOKED_AS_EXTERNAL_PROJECT=ON
-			BUILD_COMMAND $(MAKE) allscalecc
+				-DTHIRD_PARTY_DIR=${THIRD_PARTY_DIR}
+			BUILD_COMMAND $(MAKE) compiler_allscalecc
 			INSTALL_COMMAND ""
 			EXCLUDE_FROM_ALL 1
 			DOWNLOAD_NO_PROGRESS 1
 		)
 		ExternalProject_Get_Property(allscale source_dir binary_dir)
 
-		set(ALLSCALECC ${binary_dir}/code/allscalecc)
-		set(ALLSCALE_API_INCLUDE_PATH ${source_dir}/api/code/include)
+		set(ALLSCALECC ${binary_dir}/code/compiler/allscalecc)
+		set(ALLSCALE_API_INCLUDE_PATH ${source_dir}/api/code/api/include ${source_dir}/api/code/utils/include)
 	else()
 		ExternalProject_Add(
 			allscale
