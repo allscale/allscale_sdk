@@ -1,8 +1,8 @@
 #include "%PROJECT%/%MODULE%/answer.h"
 
-#include "allscale/api/user/data/vector.h"
+#include "allscale/utils/vector.h"
 
-using namespace allscale::api::user::data;
+using namespace allscale::utils;
 
 namespace %PROJECT% {
 namespace %MODULE% {
