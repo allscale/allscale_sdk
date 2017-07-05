@@ -1,6 +1,5 @@
 build/
 build_with_allscalecc/
-third_party/
 
 # Editor Specific
 *.swp
