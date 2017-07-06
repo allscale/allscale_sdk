@@ -11,11 +11,11 @@ if(NOT TARGET allscale)
 			execute_process(COMMAND ${CMAKE_COMMAND} -E sleep 5)
 			execute_process(
 				COMMAND bash ${PROJECT_SOURCE_DIR}/../scripts/dependencies/installer
-				WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+				WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 			)
 			execute_process(
 				COMMAND bash ${PROJECT_SOURCE_DIR}/../scripts/dependencies/third_party_linker
-				WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+				WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 			)
 		endif()
 
