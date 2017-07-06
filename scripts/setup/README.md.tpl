@@ -78,6 +78,17 @@ This will add the files `sema.h`, `sema.cpp` and `sema_test.cc` to the
 containing `malloc_extension.h`, `malloc_extension.cpp` and
 `malloc_extension_test.cc` in their respective subdirectories.
 
+### Using a present AllScale Compiler / API project
+
+The following two CMake options allow you to manually set the AllScale Compiler
+and AllScale API to use. Note that `USE_ALLSCALECC` must *not* be enabled for
+this to work.
+
+| Option                  | Values                         |
+| ----------------------- | ------------------------------ |
+| -DOVERRIDE_ALLSCALECC   | *path to `allscalecc` binary*  |
+| -DOVERRIDE_ALLSCALE_API | *path to AllScale API project* |
+
 ### Executable Bit
 
 When working on Windows via SMB share, consider setting following Git setting.

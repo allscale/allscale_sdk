@@ -42,7 +42,7 @@ if(NOT TARGET allscale)
 
 		set(ALLSCALECC ${binary_dir}/code/compiler/allscalecc)
 		set(ALLSCALE_API_INCLUDE_PATH ${source_dir}/api/code/api/include ${source_dir}/api/code/utils/include)
-	else()
+	elseif(NOT OVERRIDE_ALLSCALE_API)
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_api
@@ -56,5 +56,16 @@ if(NOT TARGET allscale)
 		ExternalProject_Get_Property(allscale source_dir binary_dir)
 
 		set(ALLSCALE_API_INCLUDE_PATH ${source_dir}/code/api/include ${source_dir}/code/utils/include)
+	else()
+		# dummy target
+		add_custom_target(allscale)
+	endif()
+
+	if(OVERRIDE_ALLSCALECC)
+		set(ALLSCALECC ${OVERRIDE_ALLSCALECC})
+	endif()
+
+	if(OVERRIDE_ALLSCALE_API)
+		set(ALLSCALE_API_INCLUDE_PATH ${OVERRIDE_ALLSCALE_API}/code/api/include ${OVERRIDE_ALLSCALE_API}/code/utils/include)
 	endif()
 endif()
