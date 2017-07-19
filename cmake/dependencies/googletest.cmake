@@ -3,6 +3,7 @@ if(BUILD_TESTS AND NOT TARGET googletest)
 
 	if(MSVC)
 		# disable checked iterators
+		# this should be equal to the settings defined in msvc_settings.cmake
 		set(_additional_c_flags /D_ITERATOR_DEBUG_LEVEL=0)
 		set(_additional_cxx_flags /D_ITERATOR_DEBUG_LEVEL=0)
 		set(_additional_flags -DCMAKE_C_FLAGS=${_additional_c_flags} -DCMAKE_CXX_FLAGS=${_additional_cxx_flags})
