@@ -79,7 +79,7 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
 	echo "Usage: $0 [<package>]..."
 	exit 1
 elif [[ $# == 0 ]]; then
-	PACKAGES="bison boost cudd flex hwloc llvm luajit papi"
+	PACKAGES="boost cudd hwloc llvm luajit papi ghc cabal"
 else
 	PACKAGES="$@"
 fi

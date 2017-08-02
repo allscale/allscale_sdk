@@ -4,7 +4,7 @@ Description goes here...
 
 ## Quickstart
 
-Ensure you have GCC 5 installed and set as your default C/C++ compiler.
+Ensure you have GCC 5 (or 6) installed and set as your default C/C++ compiler.
 Furthermore CMake 3.5 (or later) is required for the build and testing process.
 Simply execute the following commands to build the project and run all tests.
 
@@ -39,10 +39,14 @@ default value.
 ## Using the AllScale Compiler
 
 To use the AllScale compiler, you first have to setup the required dependencies
-in order to build it. A dependency installer is provided, running the following
-commands should be sufficient on most systems. See
-`scripts/dependencies/README.md` for more details.
+in order to build it. Some packages should be installed with your system's
+package manager, others must be installed via the provided dependency
+installer.  See `scripts/dependencies/README.md` for more details. The
+following commands assume you are using Ubuntu 16.04 LTS -- adjust the lines if
+you are using a different distribution.
 
+    $ sudo apt update
+    $ sudo apt install bison flex m4 pkg-config ruby
     $ scripts/dependencies/installer
 
 To build this project using the AllScale compiler, simply set the corresponding
@@ -52,7 +56,7 @@ between GCC and AllScaleCC.
     $ mkdir build_with_allscalecc
     $ cd build_with_allscalecc
     $ ../scripts/dependencies/third_party_linker
-    $ cmake -DUSE_ALLSCALECC=ON ..
+    $ cmake -DUSE_ALLSCALECC=ON ../code
     $ make -j8
     $ ctest -j8
 

@@ -22,7 +22,7 @@ if(NOT TARGET allscale)
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_compiler
-			GIT_TAG b3b7c10afee156826cf9fa5fd87ad395b5edb3c7
+			GIT_TAG 219cc794efbeaf9363148aa2dc21efa688feaed2
 			CMAKE_COMMAND
 				${CMAKE_COMMAND} -E env
 				"INSIEME_LIBS_HOME=${THIRD_PARTY_DIR}"
@@ -46,7 +46,7 @@ if(NOT TARGET allscale)
 		ExternalProject_Add(
 			allscale
 			GIT_REPOSITORY https://github.com/allscale/allscale_api
-			GIT_TAG 078557e511e8f229037547e9aabe5e028d224188
+			GIT_TAG e93dadd925e4b08bf165dca2392b15f212c6fba9
 			CONFIGURE_COMMAND ""
 			BUILD_COMMAND ""
 			INSTALL_COMMAND ""
