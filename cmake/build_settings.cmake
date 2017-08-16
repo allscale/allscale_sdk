@@ -8,8 +8,8 @@ option(USE_ALLSCALECC "Use allscalecc as compiler" OFF)
 option(ENABLE_PROFILING "Enable AllScale profiling support" OFF)
 
 # Developer options
-option(OVERRIDE_ALLSCALECC "Allows one to use a specific AllScale Compiler (path to allscalecc)" OFF)
-option(OVERRIDE_ALLSCALE_API "Allows one to use a specific AllScale API (path to allscale_api project)" OFF)
+# -DOVERRIDE_ALLSCALECC   ... Allows one to use a specific AllScale Compiler (path to allscalecc)
+# -DOVERRIDE_ALLSCALE_API ... Allows one to use a specific AllScale API (path to allscale_api project)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
