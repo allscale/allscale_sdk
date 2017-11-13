@@ -4,7 +4,7 @@ Description goes here...
 
 ## Quickstart
 
-Ensure you have GCC 5 (or 6) installed and set as your default C/C++ compiler.
+Ensure you have GCC 6 (or 7) installed and set as your default C/C++ compiler.
 Furthermore CMake 3.5 (or later) is required for the build and testing process.
 Simply execute the following commands to build the project and run all tests.
 
