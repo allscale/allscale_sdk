@@ -1,6 +1,6 @@
 # This CMakeLists.txt should only be run by ExternalProject
 
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.6)
 
 option(INVOKED_AS_EXTERNAL_PROJECT OFF)
 if(NOT INVOKED_AS_EXTERNAL_PROJECT)
