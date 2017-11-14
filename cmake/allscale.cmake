@@ -3,7 +3,7 @@ if(NOT TARGET allscale)
 
 	if(USE_ALLSCALECC AND NOT DEFINED OVERRIDE_ALLSCALECC)
 		if(NOT EXISTS ${THIRD_PARTY_DIR})
-			message(STATUS
+			message(
 				"====================================================================\n"
 				"No third_party directory found, will set it up for you in 5 seconds:\n"
 				"====================================================================\n"
