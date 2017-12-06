@@ -48,8 +48,8 @@ you are using a different distribution.
 
     $ sudo apt update
     $ sudo apt install bison build-essential cmake flex git groff-base \
-      libcpufreq-dev libgmp10 libhwloc-dev libluajit-5.1-dev libpapi-dev m4 \
-      pkg-config python ruby time wget zlib1g
+      libcpufreq-dev libgmp10 libhwloc-dev libjemalloc-dev libluajit-5.1-dev \
+      libpapi-dev m4 pkg-config python ruby time wget zlib1g
     $ scripts/dependencies/installer llvm boost cudd gmp zlib ghc cabal
 
 To build this project using the AllScale compiler, simply set the corresponding
